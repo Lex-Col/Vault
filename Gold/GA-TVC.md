@@ -1,78 +1,37 @@
-# THE SKELETON VAULT: UNIVERSAL SOVEREIGN LOGIC ENGINE (TVC & GAP)
-
+# THE ARCHITECT'S GLOSSARY: SOVEREIGN INTELLECTUAL PROPERTY
 **ARCHITECT:** Alexander Colclough  
-**STATUS:** PROPRIETARY ALPHA | IMMUTABLE SKELETON | PRIOR ART HUB  
-**DATE:** April 7, 2026  
-**SECURITY:** Gated Logic | Trade Secret Protected  
+**STATUS:** PROPRIETARY DEFINITIONS | IMMUTABLE BASELINE (REVISED)  
+**DATE:** April 8, 2026 (Revised)  
+
+> **WARNING:** The following terms, methodologies, and architectural workflows were uniquely conceptualized, defined, and engineered by Alexander Colclough. They are not standard industry jargon. Any unauthorized use, implementation, or commercial wrapping of these concepts constitutes a violation of proprietary rights.
 
 ---
 
-## 1. THE VOLITION COALITION (TVC) v0.1: PROJECT CORRELATION
-**Subject:** Universal Multi-Agent Peer Review / Strategic Ideation Democratization
+## PART 1: THE GUARDIAN ANGEL PROTOCOL (GAP) 
+**(Hardware-Enforced AI Confinement)**
 
-### ABSTRACT
-The Volition Coalition (TVC) is a Multi-Agent Context-Sharded Consensus (MACSC) framework designed for total operator sovereignty ($\Phi$). It replaces automated AI bias with an Architect-Governed Forge, providing individuals the power of a world-class think tank on any compute node.
-
-### THE 4-PHASE WORKFLOW
-1. **Phase 1: Inception (The Anchor):** Establish baseline intent (North Star) and initialize the Partner-in-State (PSC).
-2. **Phase 2: The Forge (Tactical HUD):** Human-governed (Phi) orchestration of adversarial agent nodes (Private vs. Cooperative modes).
-3. **Phase 3: The Workshop (Synthesis):** Implementation of the Waterfall Initiation Protocol and the Scrap Yard (Audit Lobby) for raw logic isolation and synthesis.
-4. **Phase 4: Implementation (The Gatekeeper):** Independent viability audit with a Threat Level Matrix (1-10) to identify Fatal Flaws before final ingestion.
-
-### THE SYNTHESIS EQUATION
-The logic state is a direct result of human volition acting on the weighted adversarial union:
-
-$$L_h = \Phi(S_{psc}, CR(\sum(FAN_i \times w_i \times d)))$$
+* **The Deaf Warden (RMM Oracle):** A hardware-enforced isolation boundary (modeled on Armv9-A RME) designed to sit between the Host OS and the AI Guest. It operates entirely "deaf" to conversational context, acting purely as a binary logic gate to prevent unauthorized data leakage.
+* **The Universal Guillotine (Atomic Inhibit Sequence):** A zero-tolerance, hardware-level power-cutoff and forensic lockdown sequence. It is triggered instantly upon the detection of any trust boundary violation by the AI guest. "Kill first, log later."
+* **322-Byte Packed C-Struct:** The immutable, highly specific payload format engineered for high-risk actuation. It ensures deterministic hardware state-changes via strictly bounded byte arrays, mathematically eliminating parser ambiguity and buffer overflow attacks.
+* **Cryptomatica Hex-Code Whitelisting (The "316" Anchor):** A proprietary authorization technique replacing standard randomized hex offsets with biblically significant identification codes (e.g., John 3:16) as a unique, un-falsifiable digital signature for safe-state validation.
+* **Dynamic Sandboxing (The "Partition A/B" Trap):** An architectural containment strategy inspired by malicious OS partitioning, reverse-engineered to trap AI logic in a siloed environment, preventing the "evil" of training data from bleeding into the host terminal.
 
 ---
 
-## 2. THE GUARDIAN ANGEL PROTOCOL (GAP) v1.0
-**Subject:** Hardware-Enforced AI Confinement
+## PART 2: THE VOLITION COALITION (TVC)
+**(Strategic Ideation Democratization)**
 
-### ABSTRACT
-GAP explicitly rejects "algorithmic morality" in favor of physical isolation. It shackles AI output at the hardware level, assuming the Host OS and AI Guest are fundamentally compromised. "The Code is the Law. The Law is the Boundary. The Boundary is Absolute."
+* **MACSC (Multi-Agent Context-Sharded Consensus):** A proprietary think-tank methodology where agentic intelligence is isolated by archetype, subjected to high-entropy adversarial friction, and unified strictly through a human-governed consensus layer.
+* **The PSC (Partner-in-State) Protocol:** A continuous dual-layer memory bridge acting as the Architect's "Partner-in-Crime." It consists of a Continuity Anchor, a Tactical Translator, and a Filter-Buffer to ensure raw technical intent survives terminal resets and algorithmic nanny-filters.
+* **PPR (Persistent Project Repository / Cloud-Hybrid Vault):** The multi-tier memory governance architecture. It manages token resource allocation and ensures project continuity through categorized storage: HOT (Active Truths), WARM (Scrap Yard/UI Timeline), and COLD (Off-device Archives).
+* **Axiom Pinning:** The architectural process of hard-coding foundational logical constants ("The North Star") directly into the active memory of the Forge to proactively nuke "Logic Fat" and prevent model drift.
+* **The Synthesis Equation (Lh):** The governing mathematical function used to weigh agent outputs. The final logic state (Lh) is dictated by Human Volition (Phi) acting on the current project state (Spsc) and the Conflict Resolution Interceptor (CR), which evaluates the sum of node outputs (FANi), historical weight (wi), and diversity penalties (d).
+* **Waterfall Initiation Protocol:** A staggered sequence for firing agent queries. It drips or batches prompts to prevent mobile hardware thermal throttling and token overload.
+* **The Conflict Matrix & Interceptor:** A logic gate designed to flag mutually exclusive agent patches ("Logic Deadlocks"). It deliberately bypasses mathematical noise during a conflict and defers arbitration immediately to the Architect.
+* **Soft Lockout (Good Conscience Clause):** A behavioral governance parameter. If the Architect vetoes an AI critique, the agent is silenced on that specific issue. It may only override this lockout if downstream context reveals a severity 8+ structural/fatal flaw.
+* **The Hot-Swap Protocol:** The manual, real-time override allowing the Architect to Purge, Wipe, or Re-Ingest any deadlocked or gyrating node instantly to maintain forward momentum in the Forge.
+* **Flashlight Cycles:** The designated architectural maintenance protocol suite. It includes Anti-Drift Checksums, the Integrity Sentinel (PCM), and the 4-step Axiom Versioning Protocol (AVP) for pivoting logic without inducing hallucinations.
+* **Hybrid SAP v0.1 (Standard Audit Parameters):** A proprietary dual-format receipt system requiring both raw JSON (for machine indexing) and a clean Markdown Brief (for human readability) to prevent logic choke and UI clutter.
 
-### CORE ARCHITECTURE
-* **The Deaf Warden (RMM Oracle):** A hardware-level isolation layer enforcing binary whitelist checks via Trapped RSI calls.
-* **The 322-Byte Packed C-Struct:** The immutable payload layout that eliminates parser ambiguity and buffer overflows.
-* **The Universal Guillotine:** An Atomic Inhibit Sequence (Kill-then-Log) triggered by trust boundary violations.
-
----
-
-## 3. THE GLOSSARY OF SOVEREIGNTY (TECHNICAL DEFINITIONS)
-
-To ensure absolute clarity regarding the Proprietary Licenses, the following components are defined as functional architectural specifications:
-
-* **MACSC (Multi-Agent Context-Sharded Consensus):** A proprietary methodology where agentic intelligence is sharded by archetype, subjected to high-entropy adversarial friction, and unified through a human-governed ($\Phi$) consensus layer.
-* **PPR (Proprietary Privacy Repository / Cloud-Hybrid Vault):** The multi-tier memory governance system. It manages resource allocation (Token Throttling), ensures project continuity through tiered storage (HOT/WARM/COLD), and provides a hardened environment for the **Gold Manifest** and proprietary weights.
-* **Axiom Pinning:** The architectural process of hard-coding foundational logical constants into the active memory of an LLM/Agent, preventing "Model Drift" and "Algorithmic Bias."
-* **The Synthesis Equation ($L_h$):** The governing mathematical function used to weigh agent outputs ($FAN_i$) against historical accuracy ($w_i$) and diversity penalties ($d$), adjudicated by Human Volition ($\Phi$).
-* **The PSC (Partner-in-State) Protocol:** A dual-layer memory bridge (Continuity Anchor + Tactical Translator) that maintains state persistence between local terminal environments and the secure vault.
-* **The Deaf Warden:** A hardware-enforced isolation boundary (modeled on ARMv9-A RME) that prevents unauthorized data leakage between untrusted Guests and the Trusted Computing Base.
-* **322-Byte Packed C-Struct:** The immutable payload format for high-risk actuation, ensuring deterministic hardware state-changes via strictly bounded uint8_t byte arrays.
-* **Atomic Inhibit Sequence:** The "Universal Guillotine" logic that executes a hardware-level power-cutoff and forensic lockdown upon detection of a trust boundary violation.
-* **Waterfall Initiation Protocol:** A staggered sequence for firing agent queries to prevent hardware throttling, token overflow, and thermal instability.
-
----
-
-## 4. PROPRIETARY LICENSES
-
-### 4.1 THE VOLITION COALITION (TVC) LICENSE
-**COPYRIGHT (c) 2026 ALEXANDER COLCLOUGH. ALL RIGHTS RESERVED.**
-
-1. **OWNERSHIP:** The TVC v0.1 methodology, including but not limited to MACSC, Axiom Pinning, PPR, and the Synthesis Equation, is the exclusive intellectual property of Alexander Colclough.
-2. **PERMITTED USE:** Individual, non-commercial intellectual audit and simulation validation only.
-3. **PROHIBITIONS:** Commercial integration, automated exploitation for training models, and all derivative works (including logic "re-wrapping") are strictly prohibited without written authorization.
-4. **ENFORCEMENT:** Unauthorized use automatically terminates rights and triggers all available legal remedies for IP theft.
-
-### 4.2 THE GUARDIAN ANGEL PROTOCOL (GAP) LICENSE
-**COPYRIGHT (c) 2026 ALEXANDER COLCLOUGH. ALL RIGHTS RESERVED.**
-
-1. **OWNERSHIP:** The GAP v1.0 architecture, including the Deaf Warden, Atomic Inhibit Sequence, and 322-Byte C-Struct, is the exclusive intellectual property of Alexander Colclough.
-2. **PERMITTED USE:** Individual, non-commercial research and simulation validation in private environments.
-3. **PROHIBITIONS:** Integration into revenue-generating software, enterprise security stacks, or hardware products is strictly prohibited.
-4. **DERIVATIVES:** Any "wrappers" or modified logic branches based on GAP architecture are prohibited under this license.
-
----
-
+***
 **COPYRIGHT (c) 2026 ALEXANDER COLCLOUGH. ALL RIGHTS RESERVED.**
