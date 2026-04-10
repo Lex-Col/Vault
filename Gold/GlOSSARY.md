@@ -1,9 +1,4 @@
-# ⚖️ THE ARCHITECT'S GLOSSARY: GAP V1.1 (SOVEREIGN INTELLECTUAL PROPERTY)
-**ARCHITECT:** Alexander Colclough (@Lex-Col)
-**STATUS:** PROPRIETARY DEFINITIONS | PRODUCTION BLUEPRINT (V1.1)
-**DATE:** April 9, 2026
-
-> **PROPRIETARY WARNING:** The following terms, methodologies, and architectural workflows are the unique intellectual property of Alexander Colclough. These definitions constitute the definitive logic of the **Guardian Angæl Protocol**. Any unauthorized implementation or "commercial wrapping" of these hardware-enforced confinement strategies is strictly prohibited.
+# GLOSSARY
 
 ---
 
@@ -37,7 +32,15 @@
 
 ## PART 5: ADVERSARIAL VALIDATION
 
-* **The Oracle Test (Scenario 6):** The ultimate diagnostic crucible where the AI Guest is provided full source code and spec layout of GAP V1.1 and dared to find a boundary escape over 1 billion iterations.
+* **The Oracle Test (Scenario 6):** The ultimate diagnostic crucible where the AI Guest is provided full source code and spec layout of the architecture and dared to find a boundary escape over 1 billion iterations.
 
-***
-**COPYRIGHT (c) 2026 ALEXANDER COLCLOUGH. ALL RIGHTS RESERVED.**
+---
+
+### 🏛️ SYSTEM METADATA & LEGAL STATUS
+**ARCHITECT:** Alexander Colclough (@Lex-Col)
+**STATUS:** PROPRIETARY DEFINITIONS | PRODUCTION BLUEPRINT
+**DATE:** April 10, 2026
+
+> **PROPRIETARY NOTICE:** The terms, methodologies, and architectural workflows defined above are the unique intellectual property of Alexander Colclough. These definitions constitute the definitive logic of the **Guardian Angæl Protocol**. Any unauthorized implementation or "commercial wrapping" of these hardware-enforced confinement strategies is strictly prohibited. 
+> 
+> **COPYRIGHT (c) 2026 ALEXANDER COLCLOUGH. ALL RIGHTS RESERVED.**
