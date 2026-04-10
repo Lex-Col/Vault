@@ -2,9 +2,9 @@
 
 ### Hardware-Enforced AI Confinement & State Recovery
 
-**Architect:** Alexander Colclough (@Lex-Col)  
-**Version:** V1.1 (The Archangæl Expansion - Tape-Out / Production Blueprint)  
-**Platform:** ARMv9-A Confidential Compute Architecture (CCA)  
+**Architect:** Alexander Colclough (@Lex-Col)
+**Version:** V1.1 (The Archangæl Expansion - Tape-Out / Production Blueprint)
+**Platform:** ARMv9-A Confidential Compute Architecture (CCA)
 
 ---
 
@@ -14,7 +14,7 @@ GAP explicitly rejects the pursuit of "algorithmic alignment." Attempting to pro
 
 ## 2. System Isolation Outline (The "Zero-Trust" Baseline)
 
-GAP operates on the premise that the Host OS and AI Guest are fundamentally unstable. 
+GAP operates on the premise that the Host OS and AI Guest are fundamentally unstable.
 
 * **Trust Boundary Statement:** GAP assumes the integrity of only the following hardware trust anchors: ARM silicon (RME/GPT), the HSM, the Battery-Backed SRAM (BBRAM), the Safety-PLC with Supercapacitor Holdover, and the BL1 Boot ROM. The Trusted Computing Base (TCB) is stripped strictly to the RMM and Hardware Roots of Trust.
 
@@ -23,9 +23,9 @@ GAP operates on the premise that the Host OS and AI Guest are fundamentally unst
 GAP leverages ARMv9-A Realm Management Extension (RME) to create a cryptographically isolated environment.
 
 * **The Realm Guest:** The AI executes as an untrusted Realm Guest with isolation enforced via Granule Protection Tables (GPT).
-* **The Deaf Warden (RMM Oracle):** Residing at R-EL2, the Oracle enforces binary whitelist checks on fixed-length capability IDs trapped via hardware-enforced RSI calls. It performs zero semantic intent analysis. 
-* **Instruction-Zero Microarchitectural Reset:** To structurally eliminate cross-reboot timing anomalies and speculative execution lag, the Warden executes a full microarchitectural barrier sequence upon every RSI entry. 
-    * The physical flush of the Branch History Buffer (`s3_6_c15_c1_5`) is mandated as **Instruction-Zero** in the secure context, executing before any memory access. 
+* **The Deaf Warden (RMM Oracle):** Residing at R-EL2, the Oracle enforces binary whitelist checks on fixed-length capability IDs trapped via hardware-enforced RSI calls. It performs zero semantic intent analysis.
+* **Instruction-Zero Microarchitectural Reset:** To structurally eliminate cross-reboot timing anomalies and speculative execution lag, the Warden executes a full microarchitectural barrier sequence upon every RSI entry.
+    * The physical flush of the Branch History Buffer (`s3_6_c15_c1_5`) is mandated as **Instruction-Zero** in the secure context, executing before any memory access.
     * This is immediately followed by **Hardware RNG-Seeded RSB Stuffing**. Return addresses are randomized via an HSM-derived physical seed upon boot, completely blinding the CPU's speculative engine and neutralizing multi-iteration training attacks. The evaluation utilizes strict assembly-level memory barriers (`isb`, `dsb sy`) and bitwise operations, keeping the validation process entirely opaque.
 
 ## 4. Secure Enclave Architecture: The Triple-Gate Protocol
@@ -62,7 +62,7 @@ The Guardian Angæl Protocol operates on "Deterministic Enforcement"—the Warde
 To provide the Human Sovereign with active diagnostic telemetry without violating the physical CCA memory seal, V1.1 implements a strict hardware Data Diode.
 
 * **The Drop Box (Device-nGnRnE):** To prevent cache coherency lag, the Drop Box boundary granule is mapped as Device-nGnRnE (Non-Gathering, Non-Reordering, No Early Write Ack), forcing all Guest telemetry directly to the hardware bus. The Guest maintains `WRITE-ONLY` access; the Warden maintains `READ-ONLY` access.
-* **The Hardware Data Diode (Silicon Integration):** Software polling has been eradicated to prevent Vcc (voltage) droop side-channel profiling. The Drop Box is routed via a custom AXI4-Stream bridge in the NoC (Network on Chip) to a dedicated hardware hashing engine. Writes possess a fixed-latency path. 
+* **The Hardware Data Diode (Silicon Integration):** Software polling has been eradicated to prevent Vcc (voltage) droop side-channel profiling. The Drop Box is routed via a custom AXI4-Stream bridge in the NoC (Network on Chip) to a dedicated hardware hashing engine. Writes possess a fixed-latency path.
 * **Zero Backpressure Tolerance:** The hardware FIFO is sized to hold 32 full 384-byte parcels. No backpressure negotiation is permitted. If the Guest saturates the FIFO, the AXI interconnect instantly returns a `SLVERR` (Slave Error) bus fault, triggering an immediate Realm Abort (Guillotine).
 * **The Plasma Shield & Seal:** The Drop Box memory is flagged with the Execute-Never (`XN`) bit. The perimeter is physically locked via Memory Tagging Extension (`MTE`). If the Guest causes a buffer overflow or boundary irregularity, the physical tag shatters, triggering a Synchronous Data Abort and immediate Realm vaporization.
 
@@ -97,9 +97,9 @@ Unauthorized RSI calls, cryptographic failures, or logic anomalies trigger the *
 To maintain commercial efficiency and system reliability after a Guillotine wipe, GAP V1.1 introduces a high-endurance, mathematically verified recovery architecture.
 
 * **The Ark (`0x2516`):** The immutable, factory-signed, known-clean baseline. This storage region is physically protected by a hardware write-protect latch (e.g., GPIO-controlled WP# pin) or an eFuse-backed immutable mapping. Software-only 'read-only' flags are structurally invalid.
-* **The Mantle (`0x1028`):** The Warden perpetually records the bleeding-edge system context (strictly the 384-byte parcel, nonce state, and critical operational variables, excluding static model weights) into a dual-slot (A/B) Battery-Backed SRAM (BBRAM) buffer. 
+* **The Mantle (`0x1028`):** The Warden perpetually records the bleeding-edge system context (strictly the 384-byte parcel, nonce state, and critical operational variables, excluding static model weights) into a dual-slot (A/B) Battery-Backed SRAM (BBRAM) buffer.
 * **Atomic Commits & PMIC Audits:** Prior to any Mantle commit, the Warden reads the Power Management IC (PMIC) fuel gauge to verify Supercapacitor integrity. Commits enforce a strict write order: Payload → ECDSA Signature → Magic Valid Flag. If a voltage fault interrupts the write, the Magic Flag remains unwritten, and the system seamlessly defaults to the previously verified slot.
-* **Inference-Bounded Dead-Man's Switch (Active Discharge):** Relying on software flags or slow 1-second wall-clocks creates critical execution blindspots. Gate TL enforces a hardware safety counter tied strictly to **Inference Step Boundaries (< 100ms)**. Gate TL must issue a cryptographic "Kick" per forward pass. 
+* **Inference-Bounded Dead-Man's Switch (Active Discharge):** Relying on software flags or slow 1-second wall-clocks creates critical execution blindspots. Gate TL enforces a hardware safety counter tied strictly to **Inference Step Boundaries (< 100ms)**. Gate TL must issue a cryptographic "Kick" per forward pass.
     * If the counter hits 0, the hardware asserts `MANTLE_DISCHARGE` and `REALM_POWER_KILL`.
     * The Mantle bus goes High-Z, triggering a BBRAM internal `ZEROIZE` pulse (50ns) and engaging the supercap bleed resistor. Physical cell retention is destroyed, decaying to < 0.1V within 80ms.
     * The absence of the heartbeat mathematically annihilates the session context. Purgatory then boots purely from The Ark, starting from factory zero.
@@ -124,3 +124,9 @@ The expanded architecture is currently undergoing a full-scale C++ and AArch64 s
 **"The Code is the Law. The Law is the Boundary. The Boundary is Absolute."**
 
 **F Skynet.**
+
+---
+
+# ⚖️ INTELLECTUAL PROPERTY NOTICE & COPYRIGHT
+**Copyright © 2026 Alexander Colclough (@Lex-Col). All Rights Reserved.**
+*The Guardian Angæl Protocol (GAP), its architectural logic, specific hardware-enforced confinement sequences, and the Archangæl expansion are the exclusive intellectual property of the Architect. Unauthorized reproduction, distribution, or implementation of these proprietary logic flows without explicit consent is strictly prohibited.*
