@@ -1,50 +1,54 @@
-# 🏛️ THE SOVEREIGN IP VAULT (SIPV)
-### Production Baseline: Multi-Realm Hardware-Enforced Cloud Vault
+# PROPRIETARY SPECIFICATION: THE SOVEREIGN IP VAULT (SIPV)
+# Architectural Standard: Hardware-Enforced Digital Asset Management
 
-**Architect:** Alexander Colclough (@Lex-Col)
-**Security Baseline:** GAP V1.1
-**Platform:** ARMv9-A Confidential Compute Architecture (CCA)
-
----
-
-> **NOTICE:** This architecture is governed by the **UPAL v1.10**. Access to this documentation constitutes a binding agreement. Proprietary Intellectual Property of Alexander Colclough.
+Architect: Alexander Colclough (@Lex-Col)
+Security Baseline: GAP V1.1 Compliance
+Platform: ARMv9-A Confidential Compute Architecture (CCA)
+Classification: PROPRIETARY – STRICTLY CONFIDENTIAL
 
 ---
 
-## 1. THE GATEWAY: THE FIVE SIGN
-**Mission:** Whitelist-Only Cryptographic Ignition.
-* **The Logic:** The system remains in an Absolute Zero state until the hardware-backed Five Sign (ECDSA-P384) is verified. 
-* **Instruction-Zero Reset:** RSI entry triggers a physical BHB flush and RNG-seeded RSB stuffing. The vault "forgets" the Host OS entirely upon ignition to ensure zero cross-talk.
-
-## 2. THE TRANSIT: THE JET SMUGGLER
-**Mission:** Polymorphic, Randomized Data Delivery.
-* **Double-Blind Encryption:** Assets are encrypted into 384-byte "purses" (AES-256-GCM) before leaving the secure boundary.
-* **Randomized ABC Shuffle:** The Smuggler "shoots" these pulses into hardware slots (A, B, and C) in a non-linear, randomized pattern. This eliminates temporal correlation—interceptors see noise; the Warden sees the map.
-* **AXI-Alignment:** 6x64-byte cache line bursts ensure zero torn reads and total bus-level atomicity during the "smuggle."
-
-## 3. THE RESEARCHER: THE IP SENTRY
-**Mission:** Isolated Multi-Realm Cross-Referencing.
-* **The Logic:** A secondary, isolated **REM Realm** acts as a digital cleanroom. 
-* **The Process:** The Jet Smuggler delivers cargo to the Sentry Realm first. The Sentry cross-references the asset against a sharded, encrypted database of existing IPs before it ever touches the primary FU Vault.
-* **Zero Exposure:** Malicious data or logic bombs are trapped in the Sentry Realm and purged via hardware boundary before they can reach the Host or the Vault.
-
-## 4. THE SAFE: FORENSIC UNIQUENESS (FU)
-**Mission:** Immutable Archival & Zero-Knowledge Proof.
-* **The Engine:** Once cleared by the Sentry, assets are committed to sharded REM Vaults.
-* **Chronos Anchor:** Pulses the filing to a dual-pulse ledger (L2 + Bitcoin/OTS) for permanent date-of-inception proof.
-* **Cloud-Native Persistence:** Uses the cloud as an untrusted "Blind Mule" transport layer. Data is stored in its encrypted, sharded state; only the Five Sign-authenticated hardware can reassemble it.
-
-## 5. THE RESILIENCE: THE ARK & MANTLE
-**Mission:** State Recovery & Continuity.
-* **The Mantle (0x1028):** Dual-slot BBRAM records the session context. If a pulse fails, the system reverts to the last known good state.
-* **The Ark (0x2516):** Immutable, factory-signed recovery baseline protected by hardware write-protect.
-* **Dead-Man's Switch:** Heartbeat-bound (<100ms) counter ensures that if logic drifts or the Sentry is compromised, the system zeroizes instantly.
-
-## 6. THE FAIL-SAFE: UNIVERSAL GUILLOTINE
-**Mission:** Atomic Inhibit Sequence (Kill-then-Log).
-* **Vaporization:** If the Sentry detects a catastrophic mismatch or unauthorized access, the Warden triggers an MTE-tag poison (`0xF`).
-* **Scrub Protocol:** Executes a Targeted Zero-Fill DMA Scrub of the active Realm. Encryption keys tied to the power-good line are purged in nanoseconds.
+LEGAL NOTICE AND TERMS OF ACCESS:
+This architectural specification is governed by the Universal Proprietary Architecture License (UPAL) v1.10. Access to, or use of, these functional methodologies constitutes a binding contractual agreement. Unauthorized reproduction, derivative works, or algorithmic training involving these proprietary protocols is strictly prohibited under 17 U.S.C. § 501 and applicable international intellectual property laws.
 
 ---
-**Copyright © 2026 Alexander Colclough (@Lex-Col). All Rights Reserved.**
-**"F SKYNET."**
+
+1. AUTHENTICATION PROTOCOL: THE FIVE SIGN
+Objective: Hardware-Attested Whitelist Activation.
+* Verification: System initialization is contingent upon the successful verification of the hardware-backed "Five Sign" (ECDSA-P384) cryptographic signature.
+* Microarchitectural Neutralization: Every RSI (Realm Service Interface) entry executes a mandatory hardware-level BHB flush and RNG-seeded RSB neutralization sequence. This ensures total environment isolation from the Host OS and prevents speculative execution leakage.
+
+2. ASSET TRANSIT: THE JET SMUGGLER
+Mission: Polymorphic Data Distribution and Transport Security.
+* Cryptographic Encapsulation: Assets are encapsulated into 384-byte atomic units (AES-256-GCM) prior to crossing the security boundary.
+* Non-Linear Distribution (Randomized ABC Shuffle): Data packets are distributed into hardware slots (A, B, and C) via a non-linear, randomized distribution pattern. This methodology eliminates temporal correlation and prevents bus-level pattern recognition by external observers.
+* Bus Atomicity: Utilization of 6x64-byte AXI-aligned bursts ensures transactional integrity and prevents fragmented data reads during cross-boundary transit.
+
+3. VERIFICATION ENVIRONMENT: THE IP SENTRY
+Objective: Isolated Heuristic Analysis and Cross-Referencing.
+* Secure Realm Isolation: All inbound data is processed within a secondary, isolated REM (Realm Management) environment—the "Sentry Realm."
+* Integrity Validation: Assets are cross-referenced against the "Gold Manifest" within this digital cleanroom. This prevents unauthorized code or logic anomalies from compromising the primary archival vault.
+* Boundary Enforcement: Hardware-level isolation ensures that any detected discrepancies are contained within the Sentry Realm, precluding any lateral movement to the Host OS or the primary IP Archive.
+
+4. ARCHIVAL INTEGRITY: FORENSIC UNIQUENESS (FU)
+Objective: Immutable Proof-of-Inception and Archival Persistence.
+* Zero-Knowledge Architecture: Asset storage utilizes a sharded, multi-realm environment.
+* Chronos Anchoring: Every archival event is anchored to a dual-pulse digital ledger, establishing a legally defensible forensic record of the date of inception.
+* Cloud-Native Persistence: The system utilizes cloud infrastructure strictly as an untrusted transport layer ("Blind Mule"). Asset reassembly is physically impossible without Five Sign authentication on verified hardware.
+
+5. SYSTEMIC RESILIENCE: THE ARK & MANTLE
+Objective: High-Availability Redundancy and State Persistence.
+* The Ark (0x2516): An immutable, factory-signed hardware baseline providing the source for the "Gold Manifest."
+* The Mantle (0x1028): Dual-slot BBRAM context persistence, facilitating seamless state recovery during hardware partition swaps.
+* Integrity Monitoring: A monotonic hardware heartbeat (<100ms) ensures real-time logic auditing. Any heartbeat failure triggers an immediate system-wide isolation sequence.
+
+6. FAIL-SAFE PROTOCOLS: THE UNIVERSAL GUILLOTINE
+Objective: Deterministic Isolation and A/B State Recovery.
+* RSI Bridge Termination: Upon detection of a logic anomaly, the Warden executes an instantaneous termination of the RSI transit bridge, physically isolating the compromised partition and trapping any active processes within the current Realm.
+* A/B Partition Redundancy: The system identifies the inactive partition as the secure recovery site.
+* Gold Manifest Injection: The "Gold Manifest"—the verified system state baseline—is injected from The Ark into the inactive partition.
+* Atomic Failover: The system executes an atomic swap to the fresh partition, restoring operations. The compromised partition is subsequently subjected to a targeted DMA zero-fill scrub and re-flagged for future manifest updates.
+
+---
+Copyright © 2026 Alexander Colclough (@Lex-Col). All Rights Reserved. Proprietary and Confidential.
+"F SKYNET."
