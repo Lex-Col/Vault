@@ -1,0 +1,23 @@
+# PROJECT MANIFEST: THE IP SENTRY
+### Isolated Multi-Realm Cross-Referencing Architecture
+
+**Architect:** Alexander Colclough (@Lex-Col)  
+**Version:** V0.01 (SIPV Baseline)  
+**Status:** Proprietary / Intellectual Property
+
+---
+
+## 1. EXECUTIVE SUMMARY
+The IP Sentry acts as the blind auditor for the Sovereign IP Vault. It is an isolated, multi-realm cross-referencing architecture specifically designed to verify incoming assets. The Sentry compares new payloads against an encrypted baseline of existing IP to determine uniqueness. Crucially, it executes this verification entirely within an isolated realm, ensuring the primary vault and the Host OS remain completely unexposed to the asset being evaluated.
+
+## 2. ARCHITECTURAL COMPONENTS
+* **Multi-Realm Isolation:** Operates strictly outside the primary vault and host environment.
+* **Encrypted Baseline Verification:** Cross-references assets without needing to decrypt the primary ledger.
+* **Zero-Exposure Shielding:** Returns only a binary Pass/Fail hardware flag, leaking zero context.
+
+## 3. MISSION OBJECTIVE
+To safely determine the uniqueness of an intellectual property asset without ever jeopardizing the security or exposing the contents of the primary Forensic Uniqueness Vault. 
+
+## 4. LEGAL & INTELLECTUAL PROPERTY NOTICE
+**Copyright © 2026 Alexander Colclough (@Lex-Col). All Rights Reserved.**
+The IP Sentry cross-referencing architecture and its isolated verification logic are the exclusive intellectual property of Alexander Colclough. Unauthorized use, replication, or implementation of this specific multi-realm auditing structure is strictly prohibited.
