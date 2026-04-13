@@ -1,4 +1,4 @@
-# GLOSSARY
+# GLOSSARY GAP
 
 ---
 
