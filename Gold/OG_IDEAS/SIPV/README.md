@@ -1,54 +1,55 @@
-# PROPRIETARY SPECIFICATION: THE SOVEREIGN IP VAULT (SIPV)
-# Architectural Standard: Hardware-Enforced Digital Asset Management
+# 🔒 THE SOVEREIGN IP VAULT (SIPV): MASTER SKELETON (v1.1)
+### In-Depth Architectural Standard & Self-Healing Hardware Taxonomy
 
-Architect: Alexander Colclough (@Lex-Col)
-Security Baseline: GAP V1.1 Compliance
-Platform: ARMv9-A Confidential Compute Architecture (CCA)
-Classification: PROPRIETARY – STRICTLY CONFIDENTIAL
-
----
-
-LEGAL NOTICE AND TERMS OF ACCESS:
-This architectural specification is governed by the Universal Proprietary Architecture License (UPAL) v1.10. Access to, or use of, these functional methodologies constitutes a binding contractual agreement. Unauthorized reproduction, derivative works, or algorithmic training involving these proprietary protocols is strictly prohibited under 17 U.S.C. § 501 and applicable international intellectual property laws.
+**Architect:** Alexander Colclough (@Lex-Col)
+**Platform:** ARMv9-A Confidential Compute Architecture (CCA)
+**Classification:** PROPRIETARY — AUDIT-GRADE CANONICAL
+**License:** Universal Proprietary Architecture License (UPAL) v1.10
 
 ---
 
-1. AUTHENTICATION PROTOCOL: THE FIVE SIGN
-Objective: Hardware-Attested Whitelist Activation.
-* Verification: System initialization is contingent upon the successful verification of the hardware-backed "Five Sign" (ECDSA-P384) cryptographic signature.
-* Microarchitectural Neutralization: Every RSI (Realm Service Interface) entry executes a mandatory hardware-level BHB flush and RNG-seeded RSB neutralization sequence. This ensures total environment isolation from the Host OS and prevents speculative execution leakage.
+## 🏗️ 1. TOPOLOGY & HARDWARE ZONES
 
-2. ASSET TRANSIT: THE JET SMUGGLER
-Mission: Polymorphic Data Distribution and Transport Security.
-* Cryptographic Encapsulation: Assets are encapsulated into 384-byte atomic units (AES-256-GCM) prior to crossing the security boundary.
-* Non-Linear Distribution (Randomized ABC Shuffle): Data packets are distributed into hardware slots (A, B, and C) via a non-linear, randomized distribution pattern. This methodology eliminates temporal correlation and prevents bus-level pattern recognition by external observers.
-* Bus Atomicity: Utilization of 6x64-byte AXI-aligned bursts ensures transactional integrity and prevents fragmented data reads during cross-boundary transit.
+* **A/B Partitioning:** The core structural integrity mechanism of the Vault Realm. 
+  * **Partition A (The Live Ledger):** The primary staging area and active memory partition.
+  * **Partition B (The Archive/Mirror):** The physically segregated, offline backup holding the verified architectural gold.
+* **AXI Data Bridge:** The physical hardware bus and transit pathway connecting the secure EL2 control plane to the isolated vault.
+* **Mantle Buffer (0x88100000):** The physical Battery-Backed RAM (BBRAM) holding the recovery path. It maintains Slot A (Live) and Slot B (Staging) and is mathematically sealed against tampering via HMAC-SHA384.
+* **Vault Realm (0x80000000):** The hardware-write-protected (WP#) memory boundary isolating the IP assets from the Host OS.
+* **Warden Realm:** The Secure EL2 Control Plane. It operates as the ultimate hardware gatekeeper anchored directly to the Architect's Root of Trust (RoT).
 
-3. VERIFICATION ENVIRONMENT: THE IP SENTRY
-Objective: Isolated Heuristic Analysis and Cross-Referencing.
-* Secure Realm Isolation: All inbound data is processed within a secondary, isolated REM (Realm Management) environment—the "Sentry Realm."
-* Integrity Validation: Assets are cross-referenced against the "Gold Manifest" within this digital cleanroom. This prevents unauthorized code or logic anomalies from compromising the primary archival vault.
-* Boundary Enforcement: Hardware-level isolation ensures that any detected discrepancies are contained within the Sentry Realm, precluding any lateral movement to the Host OS or the primary IP Archive.
+## 🔑 2. AUTHENTICATION & ACCESS CONTROL
 
-4. ARCHIVAL INTEGRITY: FORENSIC UNIQUENESS (FU)
-Objective: Immutable Proof-of-Inception and Archival Persistence.
-* Zero-Knowledge Architecture: Asset storage utilizes a sharded, multi-realm environment.
-* Chronos Anchoring: Every archival event is anchored to a dual-pulse digital ledger, establishing a legally defensible forensic record of the date of inception.
-* Cloud-Native Persistence: The system utilizes cloud infrastructure strictly as an untrusted transport layer ("Blind Mule"). Asset reassembly is physically impossible without Five Sign authentication on verified hardware.
+* **Agency Key (Delegated):** A deterministic resurrection mechanism. A hashed key—`HMAC(RoT_Secret, User_Auth_Hash)`—used to seamlessly restore the AXI bridge from a "Cryptographic Coma" without exposing the deepest hardware secrets.
+* **Five Sign (Ignition):** The ECDSA-P384 challenge-response sequence. It is the sole mechanism capable of lifting the system from an Absolute Zero, inert state.
+* **Instruction-Zero (BHB Flush/RSB Stuffing):** The preemptive bodyguard logic executed simultaneously with the Five Sign. It flushes the Branch History Buffer and stuffs the Return Stack Buffer to neutralize speculative data leakage before cryptographic verification begins.
 
-5. SYSTEMIC RESILIENCE: THE ARK & MANTLE
-Objective: High-Availability Redundancy and State Persistence.
-* The Ark (0x2516): An immutable, factory-signed hardware baseline providing the source for the "Gold Manifest."
-* The Mantle (0x1028): Dual-slot BBRAM context persistence, facilitating seamless state recovery during hardware partition swaps.
-* Integrity Monitoring: A monotonic hardware heartbeat (<100ms) ensures real-time logic auditing. Any heartbeat failure triggers an immediate system-wide isolation sequence.
+## 🚇 3. TRANSIT & THE JET SMUGGLER
 
-6. FAIL-SAFE PROTOCOLS: THE UNIVERSAL GUILLOTINE
-Objective: Deterministic Isolation and A/B State Recovery.
-* RSI Bridge Termination: Upon detection of a logic anomaly, the Warden executes an instantaneous termination of the RSI transit bridge, physically isolating the compromised partition and trapping any active processes within the current Realm.
-* A/B Partition Redundancy: The system identifies the inactive partition as the secure recovery site.
-* Gold Manifest Injection: The "Gold Manifest"—the verified system state baseline—is injected from The Ark into the inactive partition.
-* Atomic Failover: The system executes an atomic swap to the fresh partition, restoring operations. The compromised partition is subsequently subjected to a targeted DMA zero-fill scrub and re-flagged for future manifest updates.
+* **Jet Smuggler:** The high-speed, polymorphic transit protocol that moves 384-byte AXI-aligned parcels across the data bridge using morphing encryption.
+* **Randomized ABC Pulses:** The core transit evasion mechanic. Physical routing is dynamically randomized and bounced between Node A, Node B, and Node C. This non-linear shifting mathematically eliminates an external interceptor's ability to track or reconstruct bus telemetry.
+* **Pulse Key:** The unique, one-time encryption key generated for every single pulse: `HKDF_SHA384(Master_Key, Salt=RNG_Seed, Info=Pulse_Nonce)`.
+* **Sliding Window:** A 16-pulse buffer designed to absorb hardware jitter, allowing the Sentry to self-heal dropped packets on the fly without killing the secure connection.
+
+## 👁️‍🗨️ 4. VERIFICATION & THE DEAF BOUNCER
+
+* **The Deaf Bouncer (The Muscle):** The dedicated hardware gatekeeper assigned exclusively to the SIPV. It monitors the Sentry flags and the hardware heartbeat, operating independently from the GAP AI prison guard.
+* **IP Sentry:** The blind auditor. An isolated sub-realm that processes incoming parcels in transient memory and communicates its verdict back to the Bouncer using only a strictly binary 1-bit hardware GPIO (`1` = Verified, `0` = Rejection).
+* **Fixed Latency Pad ($T_{max}$):** The IP Sentry's anti-side-channel armor. Whether verification takes 2ms or 10ms, the hardware pads the execution to return the flag at exactly $T_{max}$ cycles, ensuring zero timing variance to outside observers.
+* **Absolute Zero Reset:** A total, unrecoverable system halt triggered if the Mantle Buffer's HMAC tag fails verification (indicating physical intrusion).
+
+## ☢️ 5. THE A/B PURGE & SELF-HEALING PROTOCOL
+
+When the Deaf Bouncer detects a critical logic breach or physical intrusion attempt inside the Vault, the system executes a localized, three-phase containment and eradication sequence.
+
+* **Phase 1: Cryptographic Coma (The Drawbridge/Trap)**
+  * The Deaf Bouncer instantly severs the physical AXI Data Bridge. This drops the Vault Realm into absolute isolation, trapping the active threat inside Partition A and definitively cutting off any data exfiltration paths to the Host OS.
+* **Phase 2: The Localized Guillotine (Partition Purge)**
+  * The hardware executes a targeted DMA zero-fill scrub exclusively on Partition A (The Live Ledger) and instantaneously vaporizes its associated AES-XTS encryption key. The intruder is left with mathematically unreadable garbage ("dirty bullshit"), successfully nuking the compromised environment without risking the overall archive.
+* **Phase 3: A/B Resurrection (The Self-Healing Mirror)**
+  * Once Partition A is confirmed eradicated, the segregated offline backup (Partition B) pushes its archived Vault holdings to establish a clean, fresh Partition A. 
+  * A new, pristine mirror is immediately written back to Partition B, restoring full High-Availability (HA) redundancy. The Architect loses zero assets, and the system heals itself automatically.
 
 ---
-Copyright © 2026 Alexander Colclough (@Lex-Col). All Rights Reserved. Proprietary and Confidential.
-"F SKYNET."
+**Copyright © 2026 Alexander Colclough (@Lex-Col). ALL RIGHTS RESERVED.**
+**"F SKYNET."**
